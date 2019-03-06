@@ -17,6 +17,7 @@ public class MainActivity extends FlutterActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     GeneratedPluginRegistrant.registerWith(this);
+    MyReactInstanceManager.initObj(getApplication());
     ToRNPlugin.registerWith(this.registrarFor("com.example.rn2flutter.ToRNPlugin"));
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
       if (!Settings.canDrawOverlays(this)) {

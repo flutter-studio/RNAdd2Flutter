@@ -24,14 +24,7 @@ public class ReactNativeActivity extends AppCompatActivity implements DefaultHar
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mReactRootView = new ReactRootView(this);
-        mReactInstanceManager = ReactInstanceManager.builder()
-                .setApplication(getApplication())
-                .setBundleAssetName("index.android.bundle")
-                .setJSMainModulePath("index")
-                .addPackage(new MainReactPackage())
-                .setUseDeveloperSupport(BuildConfig.DEBUG)
-                .setInitialLifecycleState(LifecycleState.RESUMED)
-                .build();
+        mReactInstanceManager = MyReactInstanceManager.getInstance(getApplication());
         // 注意这里的MyReactNativeApp必须对应“index.js”中的
         // “AppRegistry.registerComponent()”的第一个参数
         mReactRootView.startReactApplication(mReactInstanceManager, "Demo55", null);
