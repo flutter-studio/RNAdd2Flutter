@@ -1,6 +1,6 @@
 # rn2flutter
 
-A new Flutter application.
+将rn添加到Flutter中，一些flutter难以实现的功能可以通过rn进行实现，比如说webview，video，map等
 
 ## Getting Started
 
