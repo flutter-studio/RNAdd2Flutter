@@ -8,7 +8,7 @@ import com.facebook.react.shell.MainReactPackage;
 
 public class MyReactInstanceManager {
     private static ReactInstanceManager reactInstanceManager;
-    public static void initObj(Application application){
+    public static ReactInstanceManager initObj(Application application){
         reactInstanceManager  = ReactInstanceManager.builder()
                 .setApplication(application)
                 .setBundleAssetName("index.android.bundle")
@@ -17,6 +17,7 @@ public class MyReactInstanceManager {
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
+        return reactInstanceManager;
     }
     public static ReactInstanceManager getInstance(Application application){
         if(reactInstanceManager == null){
